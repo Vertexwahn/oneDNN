@@ -16,7 +16,7 @@
 
 # Some parts are copied from: https://github.com/tensorflow/tensorflow/blob/master/third_party/mkl_dnn/mkldnn_v1.BUILD
 
-#  
+#
 # Copyright 2021 The TensorFlow Authors. All Rights Reserved.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ template_rule(
     name = "dnnl_config_h",
     src = "include/oneapi/dnnl/dnnl_config.h.in",
     out = "include/oneapi/dnnl/dnnl_config.h",
-    substitutions = _DNNL_RUNTIME_THREADPOOL
+    substitutions = _DNNL_RUNTIME_THREADPOOL,
 )
 
 template_rule(
@@ -83,7 +83,10 @@ cc_library(
         "include",
         "src",
     ],
-    textual_hdrs = [":dnnl_config_h", ":dnnl_version_h"],
+    textual_hdrs = [
+        ":dnnl_config_h",
+        ":dnnl_version_h",
+    ],
 )
 
 #cc_library(
