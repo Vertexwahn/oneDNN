@@ -94,5 +94,14 @@ cc_library(
 #    srcs = glob([
 #        "src/cpu/*.h",
 #        "src/cpu/*.cpp",
+#        "src/cpu/**/*.cpp",
 #    ]),
+#    includes = [
+#        "include",
+#        "src",
+#    ],
+#    textual_hdrs = [
+#        ":dnnl_config_h",
+#        ":dnnl_version_h",
+#    ],
 #)
